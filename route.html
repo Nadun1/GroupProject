@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>GMaps.js Document HTML</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="gmaps.js"></script>
+  <script type="text/javascript">
+  var map;
+  $(document).ready(function(){
+  	map = new GMaps({
+  		div: '#map',
+  		lat: 6.849652,
+  		lng: 80.285683,
+  		zoom: 10
+  	});
+  	map.drawRoute({
+  		origin: [6.843320,79.955301],
+  		destination: [6.722981,80.064668],
+  		travelMode: 'driving',
+  		strokeColor: '#131540',
+  		strokeOpacity: 0.6,
+  		strokeWeight: 6
+  	});
+  });
+  </script>
+</head>
+<body>
+	<div id="map" style="width:100%;height:500px;"></div>
+</body>
+</html>
+
